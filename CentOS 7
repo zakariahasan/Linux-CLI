@@ -1,0 +1,44 @@
+ssh-server implement
+**************************
+# Step 1 – Install / Update OpenSSH Server
+sudo yum install openssh-server
+
+# Step 2 – Start OpenSSH Service
+sudo systemctl enable sshd
+sudo systemctl start  sshd
+
+************************
+
+
+Install Apache on CentOS 7
+***************************
+
+# First update the system software packages to the latest version.
+yum -y update
+
+# Next, install Apache HTTP server from the default software repositories using the YUM package manager as follows.
+yum install httpd
+
+# Once Apache web server installed, you can start it first time and enable it to start automatically at system boot.
+systemctl start httpd
+systemctl enable httpd
+systemctl status httpd
+
+**************************
+
+Configure firewalld to Allow Apache Traffic
+*******************************************
+
+# By default, CentOS 7 built-in firewall is set to block Apache traffic. To allow web traffic on Apache, 
+update the system firewall rules to permit inbound packets on HTTP and HTTPS using the commands below.
+
+firewall-cmd --zone=public --permanent --add-service=http
+firewall-cmd --zone=public --permanent --add-service=https
+firewall-cmd --reload
+
+*************************************************
+
+Test Apache HTTP Server on CentOS 7
+*************************************************
+ # Now you can verify Apache server by going to the following URL, a default Apache page will be shown.
+ http://SERVER_DOMAIN_NAME_OR_IP 
