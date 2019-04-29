@@ -1,0 +1,59 @@
+*****************************
+useadd
+*****************************
+
+useradd -m -d /home/m1807224 -u 3000 -s /bin/csh m1807224
+useradd -m -d /home/m1807224 -u 3000 -g 3002 -s /bin/csh -e 2019-12-31 -c "description" -p password m1807224 
+useradd -G examplegroup exampleusername
+-------------------------------------------------------------------------------------------------------------
+
+*****************************
+groupadd 
+*****************************
+
+sudo groupadd groupname   # To add a group
+groups groupname          # To view groups
+-------------------------------------------------------------------------------------------------------------
+
+*****************************
+usermod 
+*****************************
+usermod -a -G group1,group2,group3 username # Add a user to multiple group
+usermod -g groupname username               # Change a user's primary group
+usermod -a -G examplegroup username         # Add an existing user to a group
+-------------------------------------------------------------------------------------------------------------
+
+*****************************
+id 
+*****************************
+id username or groupname              # To view the numerical value of  user name or group 
+------------------------------------------------------------------------------------------------------------
+
+***************************************
+chage  # Password expiration and aging 
+***************************************
+chage -l username                     # To see user account expirary date
+chage -E 2019-12-31                   # To put a expirary date on useraccount
+------------------------------------------------------------------------------------------------------------
+**************************************
+Creating SymLink and hardlink in Linux
+**************************************
+ln -s <SOURCE> <LINK_NAME>           # A symbolic link,is a special kind of file  that points to the actual 
+                                        file or directory on a disk (like a shortcut in Windows)
+ln -s /path/to/file /path/to/symlink # Create a symbolic link to a file
+ln -s /path/to/dir /path/to/symlink  # Create a symbolic link to a directory
+ln /path/to/dir /path/to/hardlink    # Create a hardlink to a directory
+-------------------------------------------------------------------------------------------------------------
+*************************************
+creating directories
+*************************************
+
+mkdir -m 777 name                   # To create directory with permission setting -m=mode, 
+-------------------------------------------------------------------------------------------------------------
+*************************************
+umask. Default Permissions for files
+*************************************
+umask                               # To display permissions numeric value. By default 022
+umask -S                            # To display permissions symbolic value. By default u=rwx, g=rx, o=rx
+umask 022                           # To set or change umask(directories:777-22=755 files: 666-22=644)
+--------------------------------------------------------------------------------------------------------------
