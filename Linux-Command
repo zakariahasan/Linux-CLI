@@ -86,8 +86,18 @@ sort -o filename.txt inputfile.txt  # output to a new file
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
-
+systemctl  [Option] [Servive]       # a new tool to control the systemd system and service.
 ************************************
+systemctl start mysql.service
+systemctl stop mysql.service
+systemctl enable httpd.service
+systemctl disable httpd.service
+systemctl reload httpd.service
+systemctl restart httpd.service
+systemctl reolad or restart httpd.service
+systemctl status httpd.service
+systemctl is-active mysql.service
+systemctl is-enabled mysql.service
 
 ----------------------------------------------------------------------------------------------------------------
 
