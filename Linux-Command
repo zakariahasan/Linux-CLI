@@ -116,6 +116,10 @@ systemctl is-enabled mysql.service
 ls Command
 ************************************
 ls -ltc               # To get the list of changed directories
+
+ls -lha /dev/tty* > plugged.txt or ls -1 /dev/tty* > plugged.txt    #To find virtual usb port
+ls -lha /dev/tty* > np.txt.     or ls -1 /dev/tty* > np.txt
+vimdiff plugged.txt np.txt or diff plugged.txt np.txt
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
