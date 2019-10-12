@@ -42,3 +42,26 @@ Test Apache HTTP Server on CentOS 7
 *************************************************
  # Now you can verify Apache server by going to the following URL, a default Apache page will be shown.
  http://SERVER_DOMAIN_NAME_OR_IP 
+ 
+ *************************************************
+
+YUM - Command
+*************************************************
+ yum install firefox # Install a Package with YUM
+ yum -y install firefox  # packages automatically without asking any confirmation, use option -y 
+ yum remove firefox.    # Removing
+ yum -y remove firefox
+ yum update mysql
+ yum list openssh
+ yum search vsftpd
+ yum info firefox
+ yum list | less. #List all Available Packages using YUM
+ yum list installed | less
+ yum provides /etc/httpd/conf/httpd.conf #Yum provides function is used to find which package a specific file belongs to.
+ yum check-update
+ yum update
+ 
+ 
+ 
+ 
+ 
