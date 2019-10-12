@@ -1,0 +1,38 @@
+#sudo yum -y install httpd
+#sudo systemctl enable httpd.service
+#
+
+Step One — Create the Directory Structure
+#sudo mkdir -p /var/www/zakaria/public_html
+We can make these directories using the mkdir command (with a -p flag that allows us to create a folder with a nested folder inside of it):
+#
+#
+Step Two — Grant Permissions
+#sudo chown -R $USER:$USER /var/www/zakaria.com/public_html
+
+The $USER variable will take the value of the user you are currently logged in as when you submit the command. By doing this, our regular user now owns the public_html subdirectories where we will be storing our content.
+
+#sudo chmod -R 755 /var/www
+Step Three — Create Demo Pages for Each Virtual Host
+#nano /var/www/zakaria.com/public_html/index.html
+Step Four — Create New Virtual Host Files
+#sudo mkdir /etc/httpd/sites-available
+#sudo mkdir /etc/httpd/sites-enabled
+#sudo nano /etc/httpd/conf/httpd.conf
+
+Add this line to the end of the file:
+#IncludeOptional sites-enabled/*.conf
+
+Create the First Virtual Host File
+#sudo nano /etc/httpd/sites-available/zakaria.com.conf
+******************************
+<VirtualHost *:80>
+
+    DocumentRoot /var/www/zakaria.com/public_html
+    
+</VirtualHost>
+
+
+Step Five — Enable the New Virtual Host Files
+#sudo ln -s /etc/httpd/sites-available/zakaria.com.conf /etc/httpd/sites-enabled/zakaria.com.conf
+#sudo ln -s /etc/httpd/sites-available/example2.com.conf /etc/httpd/sites-enabled/example2.com.conf
