@@ -123,21 +123,31 @@ vimdiff plugged.txt np.txt or diff plugged.txt np.txt
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
-
+Permission 
 ************************************
+*****Read = 4, Write = 2, Execute = 1.**********
+Sudo chmod 775 File/FolderName -R
+sudo chown -R UserName File/FolderName 
+sudo chgrp -R GroupName File/FolderName
 
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
-
+Cp Command 
 ************************************
+sudo cp -R /home/ zakaria/ Project-CV/ 
 
+sudo chown -R apache.apache html/
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
-
+group - Create, add, delete 
 ************************************
 
+sudo groupadd GroupName         #Add a group
+sudo groupdel GroupName         #Delete a group
+sudo adduser UserName GroupName  #Add user to group
+sudo deluser UserName GroupName   #Delete a user to group
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
