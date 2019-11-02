@@ -147,12 +147,15 @@ group - Create, add, delete
 sudo groupadd GroupName         #Add a group
 sudo groupdel GroupName         #Delete a group
 sudo adduser UserName GroupName  #Add user to group
-sudo deluser UserName GroupName   #Delete a user to group
+sudo deluser UserName GroupName   #Delete a user from group
+gpasswd -d username GroupNane     # delete user from a group in CentOS
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
-
+Cut - cutting out section from each line
 ************************************
+cut -d: -f1  # d for dilimeter, f for field, c for colum, b for byte
+cat /etc/passwd | head -n 5 | cut -d: -f 1 | sort -r
 
 ----------------------------------------------------------------------------------------------------------------
 
