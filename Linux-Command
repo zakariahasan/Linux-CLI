@@ -83,6 +83,7 @@ find . -name "rc.conf" -exec chmod o+r '{}' \;
 find . -name "*.bak" -delete
 find . -type f -empty               # Find an empty file within the current directory.
 find /home -user exampleuser -mtime 7 -iname ".db"
+find / -user username            # To find all file or directory under the user ownership 
 ----------------------------------------------------------------------------------------------------------------
 
 ************************************
