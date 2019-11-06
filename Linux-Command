@@ -169,9 +169,14 @@ nmcli d wifi connect "SSID*" password pass1234* ifname wlans0*   # To connect to
 nmcli d disconnect wlans0*                                       # To disconnect network
 ----------------------------------------------------------------------------------------------------------------
 ************************************
-
+Copy Command- SCP
 ************************************
-
+scp local/path user@ipaddress:/remote/path                      # To copy file from local to remote site
+scp user@ipaddress:/remote/path /local/path                     # To copy file from remote site to local machine
+scp user1@host1.com:/files/file.txt user2@host2.com:/files      # Copy a file between 2 remote machine
+scp -3 user1@host1.com:/files/file.txt user2@host2.com:/files   # Copy a file between 2 remote machine via local route -3 for local route
+scp -r /local/directory remote_username@10.10.0.2:/remote/directory # To copy Directory from local to remote site -r for Directory recursive
+scp -P 2322 file.txt remote_username@10.10.0.2:/remote/directory # -P for port number
 ----------------------------------------------------------------------------------------------------------------
 ************************************
 
