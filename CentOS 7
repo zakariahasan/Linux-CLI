@@ -97,7 +97,7 @@ YUM - Command
  
   vi /etc/rsyslog.conf
   # Under Module section in # Provides TCP syslog reception add the following lines
-  Stemplate RemoteLogsTesting,"/var/log/remotehosts/%HOSTNAME%/%now%.log"
+  Stemplate RemoteLogsTesting,"/var/log/remotehosts/%HOSTNAME%/%$now%.log"
   if $fromhost-ip ! '127.0.0.1' then -?RemoteLogsTesting & stop
   
   ----------------End --------------------
