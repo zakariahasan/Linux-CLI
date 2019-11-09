@@ -78,10 +78,42 @@ YUM - Command
  ---------------------------------------------------------------------------------------------------------------------------
  
   *************************************************
-  
+  Set up Centralized Logging with Rsyslog
   *************************************************
+  -----------------------------------------------------------------------------------------------------------------------------
+  ****** From Server ***************
+  ----------basic configuration----------------------
+  natstat -nltp     # To veryfy rsyslog port status
+  vi /etc/rsyslog.conf
+  # uncomment #ModLoad imtcp and #InputTCPServerRun 514 under Modules section 
+  systemctl restart rsyslog
+  firewall-cmd --permanent --add-port-514/tcp
+  firewall-cmd --reload
+ ---------------------- End ------------------
+ 
+ tail -f /var/log/messages  # To see the real time log 
+ 
+ ----------- To change log directory------------
+ 
+  vi /etc/rsyslog.conf
+  # Under Module section in # Provides TCP syslog reception add the following lines
+  Stemplate RemoteLogsTesting,"/var/log/remotehosts/%HOSTNAME%/%now%.log"
+  if $fromhost-ip ! '127.0.0.1' then -?RemoteLogsTesting & stop
   
+  ----------------End --------------------
   
+  ****** From client ***************
+   ------------------ basic configuration------------------
+ vi /etc/rsyslog.conf
+ # At the end of file add the following line
+ *.* @@192.168.1.1:514  # 1 @ for udp port and @@ for tcp port 
+ systemctl restart rsyslog
+ 
+---------------------End-----------------------------------
+ 
+ 
+ 
+ 
   ---------------------------------------------------------------------------------------------------------------------------
   *************************************************
   
