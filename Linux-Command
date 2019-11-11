@@ -8,11 +8,18 @@ useradd -G examplegroup exampleusername
 -------------------------------------------------------------------------------------------------------------
 
 *****************************
-groupadd 
+groupadd groupdel groupmod
 *****************************
 
-sudo groupadd groupname   # To add a group
-groups groupname          # To view groups
+groupadd groupname                        # To add a group
+
+groupdel groupName                        # To delete a group
+
+groupmod -n newGroupName oldGroupName     # To change the group name
+
+gpasswd -a userName group                 # To add user to a group
+
+groups groupname                          # To view groups
 -------------------------------------------------------------------------------------------------------------
 
 *****************************
