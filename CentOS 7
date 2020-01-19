@@ -1,4 +1,4 @@
-ssh-server implement
+ssh-server implementation
 **************************
 # Step 1 – Install / Update OpenSSH Server
 sudo yum install openssh-server
@@ -10,7 +10,7 @@ sudo systemctl start  sshd
 ************************
 
 
-Install Apache on CentOS 7
+Installing Apache on CentOS 7
 ***************************
 
 # First update the system software packages to the latest version.
@@ -26,7 +26,7 @@ systemctl status httpd
 
 **************************
 
-Configure firewalld to Allow Apache Traffic
+Configuring firewalld to Allow Apache Traffic
 *******************************************
 
 # By default, CentOS 7 built-in firewall is set to block Apache traffic. To allow web traffic on Apache, 
@@ -38,14 +38,14 @@ firewall-cmd --reload
 
 *************************************************
 
-Test Apache HTTP Server on CentOS 7
+Testing Apache HTTP Server on CentOS 7
 *************************************************
  # Now you can verify Apache server by going to the following URL, a default Apache page will be shown.
  http://SERVER_DOMAIN_NAME_OR_IP 
  
  *************************************************
 
-YUM - Command
+YUM - Commands
 *************************************************
  yum install firefox # Install a Package with YUM
  yum -y install firefox  # packages automatically without asking any confirmation, use option -y 
@@ -78,10 +78,10 @@ YUM - Command
  ---------------------------------------------------------------------------------------------------------------------------
  
   *************************************************
-  Set up Centralized Logging with Rsyslog
+  Setting up Centralized Logging with Rsyslog
   *************************************************
   -----------------------------------------------------------------------------------------------------------------------------
-  ****** From Server ***************
+  *********** From Server ***************
   ----------basic configuration----------------------
   natstat -nltp     # To veryfy rsyslog port status
   vi /etc/rsyslog.conf
